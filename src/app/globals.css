@@ -1,26 +1,233 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Brand Colors ── */
+  --color-cream: #F5F2EC;
+  --color-cream-dark: #EAE5DB;
+  --color-cream-deeper: #DDD8CC;
+  --color-charcoal: #1A1A1A;
+  --color-charcoal-soft: #2C2C2C;
+  --color-stone: #8C8B7E;
+  --color-stone-light: #B8B5A8;
+  --color-copper: #9B7B5C;
+  --color-copper-light: #C9A882;
+  --color-copper-dark: #7A5E43;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* ── Fonts ── */
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+
+  /* ── Custom spacing ── */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-section: 8rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F5F2EC;
+  color: #1A1A1A;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: #5A5A52;
+  line-height: 1.75;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #9B7B5C;
+  border-radius: 0;
+}
+
+/* ── Selection ── */
+::selection {
+  background: #9B7B5C;
+  color: #FFFFFF;
+}
+
+/* ── Utility classes ── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.text-cream { color: #F5F2EC; }
+.text-charcoal { color: #1A1A1A; }
+.text-stone { color: #8C8B7E; }
+.text-copper { color: #9B7B5C; }
+
+.bg-cream { background-color: #F5F2EC; }
+.bg-charcoal { background-color: #1A1A1A; }
+.bg-copper { background-color: #9B7B5C; }
+.bg-stone { background-color: #8C8B7E; }
+
+.border-cream { border-color: #F5F2EC; }
+.border-stone { border-color: #8C8B7E; }
+.border-copper { border-color: #9B7B5C; }
+
+/* ── Line clamp ── */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Page transitions ── */
+.page-enter {
+  animation: pageEnter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Section divider ── */
+.divider-copper {
+  width: 40px;
+  height: 1px;
+  background-color: #9B7B5C;
+  display: block;
+}
+
+/* ── Image hover overlay ── */
+.img-hover-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.img-hover-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.0);
+  transition: background 0.5s ease;
+}
+.img-hover-overlay:hover::after {
+  background: rgba(26, 26, 26, 0.2);
+}
+
+/* ── Custom cursor accent ── */
+a, button {
+  cursor: pointer;
+}
+
+/* ── Hide scrollbar (keep scroll) ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Mobile-safe tap targets ── */
+@media (max-width: 640px) {
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Prevent horizontal overflow globally */
+  section, div, article, aside, main {
+    max-width: 100%;
+  }
+}
+
+/* ── Responsive images ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Prevent text overflow on narrow screens ── */
+.break-words {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Responsive iframe wrapper ── */
+.iframe-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.iframe-responsive iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* ── Mobile section spacing ── */
+@media (max-width: 640px) {
+  .section-py {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+@media (min-width: 641px) {
+  .section-py {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-py {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }

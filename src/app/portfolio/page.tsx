@@ -72,6 +72,8 @@ export default function PortfolioPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
+                aria-pressed={activeCategory === cat}
+                aria-label={`Filtrar por ${cat}`}
                 className="relative shrink-0 pb-2 text-sm tracking-widest uppercase transition-colors duration-300"
                 style={{
                   fontFamily: 'var(--font-dm-sans)',

@@ -413,6 +413,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-6 py-6 text-left"
         aria-expanded={open}
+        aria-controls={`faq-answer-${index}`}
       >
         <span
           style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)', fontWeight: 400, color: '#1A1A1A', lineHeight: 1.3 }}
@@ -427,6 +428,9 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
       <AnimatePresence>
         {open && (
           <motion.div
+            id={`faq-answer-${index}`}
+            role="region"
+            aria-label={question}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

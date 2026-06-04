@@ -87,6 +87,8 @@ export default function ContactoPage() {
 
             {formState === 'success' ? (
               <div
+                role="alert"
+                aria-live="polite"
                 className="py-12 px-8 text-center"
                 style={{ border: '1px solid #9B7B5C', backgroundColor: 'rgba(155,123,92,0.06)' }}
               >
@@ -118,6 +120,8 @@ export default function ContactoPage() {
                     id="name"
                     type="text"
                     required
+                    aria-required="true"
+                    autoComplete="name"
                     className="w-full bg-transparent pb-2 text-sm outline-none transition-colors"
                     style={{
                       fontFamily: 'var(--font-dm-sans)',
@@ -142,6 +146,8 @@ export default function ContactoPage() {
                     id="email"
                     type="email"
                     required
+                    aria-required="true"
+                    autoComplete="email"
                     className="w-full bg-transparent pb-2 text-sm outline-none transition-colors"
                     style={{
                       fontFamily: 'var(--font-dm-sans)',
@@ -165,6 +171,7 @@ export default function ContactoPage() {
                   <input
                     id="phone"
                     type="tel"
+                    autoComplete="tel"
                     className="w-full bg-transparent pb-2 text-sm outline-none transition-colors"
                     style={{
                       fontFamily: 'var(--font-dm-sans)',
@@ -188,6 +195,7 @@ export default function ContactoPage() {
                   <select
                     id="service"
                     required
+                    aria-required="true"
                     className="w-full bg-transparent pb-2 text-sm outline-none appearance-none cursor-pointer transition-colors"
                     style={{
                       fontFamily: 'var(--font-dm-sans)',
@@ -218,6 +226,7 @@ export default function ContactoPage() {
                     id="message"
                     rows={5}
                     required
+                    aria-required="true"
                     className="w-full bg-transparent pt-2 text-sm outline-none resize-none transition-colors"
                     style={{
                       fontFamily: 'var(--font-dm-sans)',

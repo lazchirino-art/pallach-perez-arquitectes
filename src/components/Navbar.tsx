@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
@@ -53,21 +54,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[72px]">
 
             {/* ── Logo ── */}
-            <Link href="/" aria-label="Pallach Perez Arquitectes — Inicio">
-              <div className={`transition-colors duration-500 ${transparent ? 'text-white' : 'text-[#1A1A1A]'}`}>
-                <p
-                  className="font-display text-[17px] font-light tracking-[0.22em] uppercase leading-none"
-                  style={{ fontFamily: 'var(--font-cormorant)' }}
-                >
-                  Pallach Perez
-                </p>
-                <p
-                  className="text-[8.5px] tracking-[0.45em] uppercase font-light opacity-60 mt-[3px]"
-                  style={{ fontFamily: 'var(--font-dm-sans)' }}
-                >
-                  Arquitectes
-                </p>
-              </div>
+            <Link href="/" aria-label="Pallach Perez Arquitectes — Inicio" className="shrink-0">
+              <img
+                src="/logo-pp.svg"
+                alt="Pallach Perez Arquitectes"
+                style={{ height: '36px', width: 'auto', display: 'block' }}
+              />
             </Link>
 
             {/* ── Desktop Nav ── */}

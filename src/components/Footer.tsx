@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import Link from 'next/link';
+
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 const IconInstagram = () => (
@@ -99,18 +100,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" aria-label="Pallach Perez Arquitectes">
-              <p
-                className="font-display text-[18px] font-light tracking-[0.22em] uppercase text-white leading-none"
-                style={{ fontFamily: 'var(--font-cormorant)' }}
-              >
-                Pallach Perez
-              </p>
-              <p
-                className="text-[8px] tracking-[0.45em] uppercase font-light text-white/40 mt-[4px]"
-                style={{ fontFamily: 'var(--font-dm-sans)' }}
-              >
-                Arquitectes
-              </p>
+              <img
+                src="/logo-pp.svg"
+                alt="Pallach Perez Arquitectes"
+                style={{ height: '60px', width: 'auto', display: 'block' }}
+              />
             </Link>
             <p
               className="text-white/45 text-[16px] font-light leading-relaxed mt-6 max-w-[240px]"
@@ -163,7 +157,7 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h3
-              className="text-[9px] tracking-[0.4em] uppercase text-white/35 font-light mb-5"
+              className="text-[9px] tracking-[0.4em] uppercase text-white/60 font-light mb-5"
               style={{ fontFamily: 'var(--font-dm-sans)' }}
             >
               Navegación
@@ -173,7 +167,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-[16px] font-light text-white/55 hover:text-white transition-colors duration-300"
+                    className="text-[16px] font-light text-white/70 hover:text-white transition-colors duration-300"
                     style={{ fontFamily: 'var(--font-dm-sans)' }}
                   >
                     {label}
@@ -186,7 +180,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3
-              className="text-[9px] tracking-[0.4em] uppercase text-white/35 font-light mb-5"
+              className="text-[9px] tracking-[0.4em] uppercase text-white/60 font-light mb-5"
               style={{ fontFamily: 'var(--font-dm-sans)' }}
             >
               Servicios
@@ -196,7 +190,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-[16px] font-light text-white/55 hover:text-white transition-colors duration-300"
+                    className="text-[16px] font-light text-white/70 hover:text-white transition-colors duration-300"
                     style={{ fontFamily: 'var(--font-dm-sans)' }}
                   >
                     {label}
@@ -209,7 +203,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3
-              className="text-[9px] tracking-[0.4em] uppercase text-white/35 font-light mb-5"
+              className="text-[9px] tracking-[0.4em] uppercase text-white/60 font-light mb-5"
               style={{ fontFamily: 'var(--font-dm-sans)' }}
             >
               Contacto
@@ -218,7 +212,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+34937192001"
-                  className="flex items-start gap-2.5 text-white/55 hover:text-white transition-colors duration-300 group"
+                  className="flex items-start gap-2.5 text-white/70 hover:text-white transition-colors duration-300 group"
                 >
                   <Phone size={14} className="mt-0.5 shrink-0 text-[#9B7B5C]" />
                   <span
@@ -232,7 +226,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@pallachperezarquitectes.com"
-                  className="flex items-start gap-2.5 text-white/55 hover:text-white transition-colors duration-300"
+                  className="flex items-start gap-2.5 text-white/70 hover:text-white transition-colors duration-300"
                 >
                   <Mail size={14} className="mt-0.5 shrink-0 text-[#9B7B5C]" />
                   <span
@@ -244,7 +238,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-2.5 text-white/55">
+                <div className="flex items-start gap-2.5 text-white/70">
                   <MapPin size={14} className="mt-0.5 shrink-0 text-[#9B7B5C]" />
                   <address
                     className="text-[16px] font-light not-italic leading-relaxed"
@@ -263,7 +257,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="mt-8">
               <p
-                className="text-[10px] tracking-[0.3em] uppercase text-white/35 mb-3"
+                className="text-[10px] tracking-[0.3em] uppercase text-white/60 mb-3"
                 style={{ fontFamily: 'var(--font-dm-sans)' }}
               >
                 Newsletter
@@ -282,6 +276,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
+                  aria-label="Suscribirse al newsletter"
                   className="px-4 bg-[#9B7B5C] text-white text-[10px] tracking-widest uppercase font-light hover:bg-[#7A5E43] transition-colors duration-300"
                   style={{ fontFamily: 'var(--font-dm-sans)' }}
                 >
@@ -297,7 +292,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p
-            className="text-[11px] text-white/25 font-light"
+            className="text-[11px] text-white/50 font-light"
             style={{ fontFamily: 'var(--font-dm-sans)' }}
           >
             © {new Date().getFullYear()} Pallach Perez Arquitectes S.L. Todos los derechos reservados.
@@ -307,7 +302,7 @@ export default function Footer() {
               <Link
                 key={href}
                 href={href}
-                className="text-[10.5px] text-white/25 hover:text-white/60 font-light transition-colors duration-300"
+                className="text-[10.5px] text-white/50 hover:text-white/60 font-light transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-dm-sans)' }}
               >
                 {label}

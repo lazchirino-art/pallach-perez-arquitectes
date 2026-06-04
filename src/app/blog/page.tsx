@@ -83,6 +83,8 @@ export default function BlogPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
+                aria-pressed={activeCategory === cat}
+                aria-label={`Filtrar por ${cat}`}
                 className="relative shrink-0 pb-2 text-sm tracking-widest uppercase transition-colors duration-300"
                 style={{
                   fontFamily: 'var(--font-dm-sans)',
@@ -234,13 +236,16 @@ export default function BlogPage() {
                 Gracias por suscribirte. Pronto recibirás nuestros artículos.
               </p>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3" aria-label="Suscripción al newsletter">
+                <label htmlFor="newsletter-email" className="sr-only">Email para newsletter</label>
                 <input
+                  id="newsletter-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@correo.com"
                   required
+                  aria-required="true"
                   className="flex-1 px-5 py-4 text-sm outline-none"
                   style={{
                     backgroundColor: 'rgba(255,255,255,0.06)',
@@ -251,6 +256,7 @@ export default function BlogPage() {
                 />
                 <button
                   type="submit"
+                  aria-label="Suscribirse al newsletter"
                   className="px-8 py-4 text-sm tracking-widest uppercase shrink-0 transition-colors duration-300"
                   style={{
                     backgroundColor: '#9B7B5C',

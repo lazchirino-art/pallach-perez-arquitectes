@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="200" fill="#F5F2EC"/>
+
+  <!-- Thin decorative line top -->
+  <line x1="40" y1="30" x2="360" y2="30" stroke="#9B7B5C" stroke-width="0.5"/>
+
+  <!-- PP Monogram -->
+  <text
+    x="200"
+    y="118"
+    font-family="Cormorant Garamond, Georgia, serif"
+    font-size="88"
+    font-weight="300"
+    letter-spacing="8"
+    fill="#1A1A1A"
+    text-anchor="middle"
+    dominant-baseline="auto"
+  >PP</text>
+
+  <!-- Studio name -->
+  <text
+    x="200"
+    y="148"
+    font-family="Cormorant Garamond, Georgia, serif"
+    font-size="10"
+    font-weight="300"
+    letter-spacing="6"
+    fill="#8C8B7E"
+    text-anchor="middle"
+  >PALLACH PEREZ ARQUITECTES</text>
+
+  <!-- Thin decorative line bottom -->
+  <line x1="40" y1="168" x2="360" y2="168" stroke="#9B7B5C" stroke-width="0.5"/>
+</svg>

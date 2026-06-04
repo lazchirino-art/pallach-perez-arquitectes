@@ -300,14 +300,77 @@ Allow all + sitemap URL.
 
 ---
 
+## Pendiente — sin contenido real
+
+### Redes sociales — URLs inventadas (confirmar con el cliente)
+
+| Red | URL actual en el código |
+|---|---|
+| Instagram | https://www.instagram.com/pallachperezarquitectes |
+| LinkedIn | https://www.linkedin.com/company/pallachperezarquitectes |
+| Pinterest (Contacto) | https://www.pinterest.com/pallachperezarquitectes |
+| Pinterest (Footer) | https://www.pinterest.es/pallachperezarquitectes |
+| Houzz (Footer) | https://www.houzz.es/professionals/pallachperezarquitectes |
+| WhatsApp (Contacto) | https://wa.me/34937192001 |
+
+### Formularios — sin backend, no envían nada
+
+| Formulario | Archivo | Estado |
+|---|---|---|
+| Contacto | `src/app/contacto/page.tsx` | Solo visual, no envía email |
+| Newsletter Footer | `src/components/Footer.tsx` | Campo decorativo |
+| Newsletter Blog | `src/app/blog/page.tsx` | Campo decorativo |
+
+### Blog — artículos con cuerpo genérico
+
+Todos comparten el mismo texto de cuerpo. Necesitan contenido real:
+
+| URL | Título |
+|---|---|
+| `/blog/tendencias-arquitectura-2024` | Tendencias en arquitectura residencial 2024 |
+| `/blog/reforma-integral-guia` | Guía completa para una reforma integral |
+| `/blog/materiales-sostenibles` | Materiales sostenibles en arquitectura |
+| `/blog/interiorismo-minimalista` | Interiorismo minimalista: menos es más |
+| `/blog/licencias-obras-barcelona` | Licencias de obra en Barcelona |
+| `/blog/arquitectura-bioclimatica` | Arquitectura bioclimática en el Mediterráneo |
+
+### Portfolio — proyectos con descripción y galería genérica
+
+Todos usan imágenes de Unsplash y la misma descripción. Necesitan fotos y textos reales:
+
+| URL | Proyecto |
+|---|---|
+| `/portfolio/can-malagrida` | Can Malagrida |
+| `/portfolio/reforma-eixample` | Reforma Eixample |
+| `/portfolio/oficinas-arc` | Oficinas Arc |
+| `/portfolio/villa-montserrat` | Villa Montserrat |
+| `/portfolio/interior-gracia` | Interior Gràcia |
+| `/portfolio/hotel-boutique` | Hotel Boutique Valles |
+| `/portfolio/casa-bages` | Casa Bages |
+| `/portfolio/reforma-sarria` | Reforma Sarrià |
+
+### Otros pendientes
+
+| Elemento | Problema | Solución |
+|---|---|---|
+| `privacidad@pallachperezarquitectes.com` | Buzón inexistente (aparece en `/privacidad` y `/cookies`) | Crear buzón o redirigir a `info@` |
+| `/public/og-image.jpg` | Archivo no existe — WhatsApp/redes mostrarán previsualización vacía | Diseñar imagen 1200×630 y subir a `/public` |
+
+---
+
 ## Lo que falta / próximos pasos
 
-| Funcionalidad | Complejidad | Tecnología sugerida |
+| Funcionalidad | Prioridad | Tecnología sugerida |
 |---|---|---|
-| Formulario de contacto funcional | Baja | Next.js Route Handler + Resend |
-| Blog con CMS | Media | Notion API / Sanity / Markdown |
-| Portfolio editable | Media | Supabase + panel de admin |
+| Imagen OG real (`/public/og-image.jpg`) | Alta | Diseñar 1200×630px y subir a `/public` |
+| Redes sociales reales del cliente | Alta | Confirmar URLs con el cliente |
+| Formulario de contacto funcional | Alta | Next.js Route Handler + Resend |
+| Newsletter funcional | Media | Mailchimp / Brevo API |
+| Contenido real en artículos del blog | Media | Textos del cliente o redacción |
+| Fotos y textos reales en portfolio | Media | Fotografías del cliente |
+| Email `privacidad@` | Media | Crear buzón en el hosting |
+| Blog con CMS | Baja | Notion API / Sanity / Markdown |
+| Portfolio editable | Baja | Supabase + panel de admin |
 | Política de cookies interactiva | Baja | cookie-consent library |
-| Imagen OG real (`/public/og-image.jpg`) | Baja | Diseño + subir a /public |
 | Analytics | Baja | Google Analytics 4 / Plausible |
 | Dominio + deploy | Baja | Vercel (recomendado para Next.js) |

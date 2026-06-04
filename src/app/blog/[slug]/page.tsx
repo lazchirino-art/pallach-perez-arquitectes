@@ -311,6 +311,7 @@ export default function BlogArticlePage() {
                   navigator.clipboard.writeText(articleUrl)
                 }
               }}
+              aria-label="Copiar enlace del artículo"
               className="flex items-center gap-2 px-5 py-2.5 text-xs tracking-widest uppercase transition-colors duration-300"
               style={{
                 border: '1px solid rgba(26,26,26,0.2)',

@@ -154,8 +154,9 @@ const testimonials = [
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const heroY = useTransform(scrollYProgress, [0, 1], prefersReduced ? [0, 0] : [0, -120]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.7], prefersReduced ? [1, 1] : [1, 0]);
 
   const [heroLoaded, setHeroLoaded] = useState(false);
   useEffect(() => {
